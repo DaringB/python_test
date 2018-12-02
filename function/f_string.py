@@ -21,7 +21,7 @@ class MyString:
         self.__string_ = value
 
     def do_string(self):
-        v = self.__string_.count("aa")
+        v = "@_@".join(self.__string_)
         print(v)
 
 
