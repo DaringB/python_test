@@ -16,6 +16,6 @@
 
 name = 'jack'
 
-func_a = lambda x:x+'@lambda'
+func_a = lambda x, y, z: (x + 1, y + 2, z + 3)
 
-print(func_a('a'))
+print(func_a(1, 2, 3))
