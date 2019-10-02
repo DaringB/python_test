@@ -90,7 +90,7 @@ class Subscription:
 
             return "Subscription Id: {} Start Date: {} \n{} \nNo outstanding clothes.\n" \
                 .format(self._subscriptionID,
-                        self._startDate,
+                        self._startDate.strftime("%d %B %Y"),
                         self._client)
 
         elif self._returnedDate is not None and \

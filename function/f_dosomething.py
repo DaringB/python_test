@@ -30,7 +30,7 @@ def main(argv):
     datetime_2 = datetime.datetime(2019,9,7)
     sub_1 = Subscription(datetime_1, client_1)
     print(sub_1)
-    
+
     sub_1.requestClothes(datetime_2,cloth_1)
     print(sub_1)
 
