@@ -14,51 +14,29 @@
 @createTime: 2018/11/22 0:29
 """
 import sys
+import os
+import datetime
+sys.path.append(os.path.abspath('.'))
 
-
-class Person:
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def say_all(self):
-        self._say_name()
-        self._say_age()
-
-    def _say_name(self):
-        print('name is {}'.format(self.__name))
-
-    def _say_age(self):
-        if self.age > 18:
-            print('age is {}\n'.format(self.__age))
-        else:
-            print('クソガキ！\n')
-
-    @property
-    def name(self):
-        return self.__name
-
-    @name.setter
-    def name(self, value):
-        self.__name = value
-
-    @property
-    def age(self):
-        return self.__age
-
-    @age.setter
-    def age(self, value):
-        self.__age = value
-
+from classes.c_Clothes import Clothes
+from classes.c_Client import Client
+from classes.c_Subscription import Subscription
 
 def main(argv):
-    person_a = Person('Nicck', 20)
-    person_a.say_all()
+    client_1=Client("123", "Janet", "21 Tamp")
+    client_1.addPayment(1000)
+    cloth_1 = Clothes('107', 'Elliat', 7, 237)
+    datetime_1 = datetime.datetime(2019,8,31)
+    datetime_2 = datetime.datetime(2019,9,7)
+    sub_1 = Subscription(datetime_1, client_1)
+    print(sub_1)
+    
+    sub_1.requestClothes(datetime_2,cloth_1)
+    print(sub_1)
 
-    person_b = Person('Jack', 13)
-    person_b.say_all()
-
+    datetime_3 = datetime.datetime(2019,9,22)
+    sub_1.returnClothes(datetime_3)
+    print(sub_1)
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))
