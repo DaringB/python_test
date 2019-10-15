@@ -80,7 +80,7 @@ class Company:
         elif self.searchClient(clientID) is None or sub is None:
             return False
         else:
-            return sub.requestClothes(requestDate, requestDate)
+            return sub.requestClothes(requestDate, clothes)
 
     def clothesStr(self):
         pass
